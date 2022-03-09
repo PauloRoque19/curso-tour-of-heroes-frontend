@@ -1,9 +1,5 @@
 
-.heroes {
+.mat-row:hover {
   cursor: pointer;
-}
-
-.heroes li.selected {
-  background-color: black;
-  color: white;
+  background: whitesmoke;
 }
