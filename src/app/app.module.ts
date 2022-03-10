@@ -1,44 +1,34 @@
+import { HeroesModule } from './heroes/heroes.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { CoreModule } from './core/core.module';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HeroDetailsComponent } from './hero-details/hero-details.component';
+import { HeroesComponent } from './heroes/components/heroes/heroes.component';
+import { HeroDetailsComponent } from './heroes/components/hero-details/hero-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MessageComponent } from './message/message.component';
 
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatCardModule} from '@angular/material/card';
-import {MatListModule} from '@angular/material/list';
-import {MatInputModule} from '@angular/material/input';
-import {MatTableModule} from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { MaterialModule } from './material/material.module';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent,
-    HeroDetailsComponent,
-    MessageComponent,
-    DashboardComponent
   ],
   imports: [
+    //@Angular
     BrowserModule,
     FormsModule,
-    FlexLayoutModule,
-    MaterialModule,
     BrowserAnimationsModule,
+
+    //app
+    CoreModule,
     AppRoutingModule
   ],
   providers: [],
