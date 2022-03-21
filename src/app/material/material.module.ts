@@ -8,34 +8,35 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatAutocompleteModule} from '@angular/material/autocomplete'
+
+const MODULES = [
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatExpansionModule,
+    MatTooltipModule,
+    MatCardModule,
+    MatListModule,
+    MatInputModule,
+    MatTableModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    MatAutocompleteModule
+]
 
 @NgModule({
   declarations: [],
   imports: [
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatExpansionModule,
-    MatTooltipModule,
-    MatCardModule,
-    MatListModule,
-    MatInputModule,
-    MatTableModule,
-    MatProgressSpinnerModule
+    MODULES
   ],
   exports: [
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatExpansionModule,
-    MatTooltipModule,
-    MatCardModule,
-    MatListModule,
-    MatInputModule,
-    MatTableModule,
-    MatProgressSpinnerModule
+    MODULES
   ]
 })
 export class MaterialModule { }

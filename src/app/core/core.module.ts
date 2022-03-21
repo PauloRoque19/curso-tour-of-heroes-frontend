@@ -9,13 +9,16 @@ import { MessageComponent } from './components/message/message.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 
 
 const COMPONENTS = [
   ToolbarComponent,
   MessageComponent,
   PageNotFoundComponent,
-  LoadingComponent
+  LoadingComponent,
+  ConfirmationDialogComponent
 ];
 
 const MODULES = [
@@ -34,7 +37,13 @@ const MODULES = [
       provide: HTTP_INTERCEPTORS,
       useClass: LoadingInterceptor,
       multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
     }
+
   ]
 })
 export class CoreModule {

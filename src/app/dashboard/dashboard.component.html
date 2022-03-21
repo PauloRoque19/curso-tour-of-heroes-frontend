@@ -1,19 +1,11 @@
 <h1>dashboard</h1>
+<div fxLayout="column" fxLayoutGap="24px">
 
-<div fxLayout="row" fxLayout.xs="column" fxLayoutGap="12px" fxLayoutAlign="space-between">
-  <mat-card *ngFor="let hero of heroes" [routerLink]="['/heroes',hero.id]">
-    <mat-card-title>{{hero.name}}</mat-card-title>
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="12px" fxLayoutAlign="space-between">
+    <mat-card *ngFor="let hero of heroes" [routerLink]="['/heroes',hero.id]">
+      <mat-card-title>{{hero.name}}</mat-card-title>
+    </mat-card>
+  </div>
 
-    <!-- <img matCardImage src="Card wide image source">
-    <mat-card-content>
-        Text content
-    </mat-card-content>
-    <mat-card-actions align="start">
-        <button mat-button (click)="onAction1">Action1</button>
-
-    </mat-card-actions>
-    <mat-card-footer>
-        Footer
-    </mat-card-footer> -->
-  </mat-card>
+  <app-hero-search [label]="'Hero search'" (selected)="onSelected($event)"></app-hero-search>
 </div>
