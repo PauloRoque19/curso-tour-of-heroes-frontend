@@ -1,3 +1,4 @@
+import { TokenInterceptor } from './interceptors/token.interceptor';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -42,8 +43,12 @@ const MODULES = [
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorInterceptor,
       multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
     }
-
   ]
 })
 export class CoreModule {

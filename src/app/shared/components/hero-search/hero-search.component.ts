@@ -1,6 +1,6 @@
 import { HeroService } from './../../../core/services/hero.service';
 import { Hero } from './../../../core/models/hero.model';
-import { Observable, Subject, switchMap } from 'rxjs';
+import { debounceTime, distinctUntilChanged, Observable, Subject, switchMap } from 'rxjs';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 
@@ -20,6 +20,8 @@ export class HeroSearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.heroes$ = this.searchTerms.pipe(
+      debounceTime(400),
+      distinctUntilChanged(),
       switchMap(term => this.heroService.search(term))
     );
   }
